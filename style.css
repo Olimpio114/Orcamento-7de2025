@@ -21,9 +21,12 @@ body {
 
 
 
+
+
+
 /* Cabeçalho */
 header {
-    background-color: #14befc; /* Cor de fundo azul claro para o cabeçalho */
+    background-color: #2c32b8;/* Cor de fundo azul claro para o cabeçalho */
     color: white; /* Cor do texto branco */
     padding: 15px 20px; /* Preenchimento interno (superior/inferior e lateral) */
     position: fixed; /* Fixa o cabeçalho no topo da viewport, não rola com o conteúdo */
@@ -33,6 +36,8 @@ header {
     z-index: 1000; /* Garante que o cabeçalho fique acima de outros elementos na página */
     box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Adiciona uma sombra sutil abaixo do cabeçalho */
     
+	
+	
 	
 	
 	
@@ -90,10 +95,12 @@ header .year {
 
 
 
+
+
 /* Sidebar (Menu Lateral) */
 .sidebar {
     width: 150px; /* Largura fixa da barra lateral */
-    background-color:#268fbe; /* Cor de fundo azul mais escura para a sidebar */
+    background-color:#007bff;/* Cor de fundo azul mais escura para a sidebar */
     color: white; /* Cor do texto branco */
     padding-top: 100px; /* Espaço na parte superior para evitar sobreposição com o cabeçalho fixo */
     position: fixed; /* Fixa a sidebar na lateral da viewport */
@@ -127,6 +134,33 @@ header .year {
 	white-space: nowrap; /* Garante que o texto do link não quebre linha */
     line-height: 1.5; /* Espaçamento entre linhas do texto */
 }
+
+/* Estilos para os itens do menu lateral */
+.sidebar nav ul li a {
+    color: white; /* Cor original do texto */
+    text-decoration: none;
+    padding: 10px 15px;
+    display: block;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Transição suave */
+}
+
+/* Efeito hover para os itens do menu */
+.sidebar nav ul li a:hover {
+    background-color: #2c32b8; /* Cor de fundo mais clara no hover */
+    color: #007bff; /* Cor do texto principal (azul) no hover */
+}
+
+/* Estilo para o item de menu ativo (que já está selecionado) */
+.sidebar nav ul li a.active {
+    background-color: #007bff; /* Fundo azul para o item ativo */
+    color: white; /* Texto branco para o item ativo */
+    font-weight: bold;
+}
+
+
+
+
+
 
 /* Garante um espaçamento adequado para o texto dentro do link */
     /* Você pode ajustar o font-size se estiver muito grande e causando o corte,
@@ -232,7 +266,7 @@ table tfoot td {
 
 /* Div Estática para Totais (Footer) */
 .summary-footer {
-    background-color:#14befc; /* Cor de fundo azul claro, igual ao cabeçalho */
+    background-color:#2c32b8; /* Cor de fundo azul claro, igual ao cabeçalho */
     color: white; /* Cor do texto branco */
     padding: 15px 20px; /* Preenchimento interno */
     text-align: center; /* Centraliza o texto */
@@ -342,6 +376,12 @@ table tfoot td {
         padding: 10px; /* Ajusta o preenchimento */
     }
 
+
+
+
+
+
+
     /* Tabelas Responsivas */
     table, thead, tbody, th, td, tr {
         display: block; /* Faz com que todos os elementos da tabela se comportem como blocos, empilhando-os */
@@ -382,4 +422,39 @@ table tfoot td {
     table input[type="number"] {
         width: calc(100% - 10px); /* Ajusta a largura dos inputs para telas menores */
     }
+}
+
+
+
+
+
+/* Estilos gerais para os botões */
+.table-controls button,
+.remove-horizontal-row-button {
+    background-color: #2c32b8;/* Um verde bacana para adicionar */
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9em;
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Transição para cor e escala */
+    margin-left: 5px; /* Um pequeno espaçamento entre botões, se houver */
+}
+
+/* Efeito hover para os botões */
+.table-controls button:hover,
+.remove-horizontal-row-button:hover {
+    background-color: #218838; /* Um verde um pouco mais escuro no hover */
+    transform: translateY(-1px); /* Pequeno levantamento no hover */
+}
+
+/* Estilo específico para o botão de remover (opcional, mas recomendado para clareza) */
+.remove-horizontal-row-button {
+    background-color: #2c32b8;/* azul */
+}
+
+.remove-horizontal-row-button:hover {
+    background-color: #c82333; /* Vermelho mais escuro no hover */
+    transform: translateY(-1px);
 }

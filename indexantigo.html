@@ -32,7 +32,7 @@
                 <li><a href="#" class="menu-item" data-target="educacao-section">Educação</a></li>
                 <li><a href="#" class="menu-item" data-target="saude-section">Saúde</a></li>
                 <li><a href="#" class="menu-item" data-target="pessoais-section">Pessoais</a></li>
-    <li><a href="#" class="menu-item" data-target="pessoais-section">Transporte</a></li>
+                <li><a href="#" class="menu-item" data-target="transporte-section">Transporte</a></li>
                 <li><a href="#" class="menu-item" data-target="lazer-section">Lazer</a></li>
                 <li><a href="#" class="menu-item" data-target="servico-financeiro-section">Serviços Financeiros</a></li>
                 <li><a href="#" class="menu-item" data-target="resumo-section">Resumo</a></li>
@@ -45,9 +45,7 @@
         <section id="receita-section" class="budget-section active">
             <h2>Receita</h2>
          
-            <div class="table-controls">
-              <button class="add-row-button">Adicionar Linha</button>
-            </div>
+          
             <div class="table-container">
                 <table id="receita-vertical">
                     <thead>
@@ -85,13 +83,14 @@
                     </tfoot>
                 </table>
             </div>
+<div class="table-controls">
+              <button class="add-row-button">Adicionar Linha</button>
+          </div>
         </section>
 
         <section id="alimentacao-section" class="budget-section">
             <h2>Alimentação</h2>
-	        <div class="table-controls">
-              <button class="add-row-button">Adicionar Linha</button>
-            </div>
+	       
             <div class="table-container">
                 <table id="alimentacao-vertical">
                     <thead>
@@ -125,13 +124,14 @@
                     </tfoot>
                 </table>
             </div>
+<div class="table-controls">
+              <button class="add-row-button">Adicionar Linha</button>
+          </div>
         </section>
 
         <section id="moradia-section" class="budget-section">
             <h2>Moradia</h2>
-            <div class="table-controls">
-                <button class="add-row-button">Adicionar Linha</button>
-            </div>
+          
             <div class="table-container">
                 <table>
                     <thead>
@@ -175,13 +175,14 @@
                     </tfoot>
                 </table>
             </div>
+<div class="table-controls">
+              <button class="add-row-button">Adicionar Linha</button>
+          </div>
         </section>
 
         <section id="educacao-section" class="budget-section">
           <h2>Educação</h2>
-          <div class="table-controls">
-              <button class="add-row-button">Adicionar Linha</button>
-          </div>
+          
           <div class="table-container">
             <table>
               <thead>
@@ -209,13 +210,14 @@
               </tfoot>
             </table>
           </div>
+<div class="table-controls">
+              <button class="add-row-button">Adicionar Linha</button>
+          </div>
         </section>
 
         <section id="saude-section" class="budget-section">
           <h2>Saúde</h2>
-          <div class="table-controls">
-              <button class="add-row-button">Adicionar Linha</button>
-          </div>
+     
           <div class="table-container">
             <table>
               <thead>
@@ -240,20 +242,27 @@
                     <td><button class="remove-horizontal-row-button">Remover</button></td>
                 </tr>
               </tbody>
+
+
               <tfoot>
                 <tr>
                   <td colspan="7" style="text-align:right;"><strong>Total Geral da Saúde: R$ <span id="total-saude-section">0.00</span></strong></td>
                 </tr>
               </tfoot>
+
             </table>
+ 
+
+          </div>
+<div class="table-controls">
+              <button class="add-row-button">Adicionar Linha</button>
           </div>
         </section>
 
+
         <section id="pessoais-section" class="budget-section">
           <h2>Pessoais</h2>
-          <div class="table-controls">
-              <button class="add-row-button">Adicionar Linha</button>
-          </div>
+         
           <div class="table-container">
             <table>
               <thead>
@@ -281,13 +290,16 @@
               </tfoot>
             </table>
           </div>
+<div class="table-controls">
+              <button class="add-row-button">Adicionar Linha</button>
+          </div>
         </section>
+
+
 
 <section id="transporte-section" class="budget-section">
     <h2>Transporte</h2>
-    <div class="table-controls">
-        <button class="add-row-button">Adicionar Linha</button>
-    </div>
+   
     <div class="table-container">
         <table>
             <thead>
@@ -326,15 +338,16 @@
             </tfoot>
         </table>
     </div>
+	<div class="table-controls">
+              <button class="add-row-button">Adicionar Linha</button>
+          </div>
 </section>
 
 
 
         <section id="lazer-section" class="budget-section">
           <h2>Lazer</h2>
-          <div class="table-controls">
-              <button class="add-row-button">Adicionar Linha</button>
-          </div>
+       
           <div class="table-container">
             <table>
               <thead>
@@ -364,13 +377,14 @@
               </tfoot>
             </table>
           </div>
+<div class="table-controls">
+              <button class="add-row-button">Adicionar Linha</button>
+          </div>
         </section>
 
         <section id="servico-financeiro-section" class="budget-section">
           <h2>Serviços Financeiros</h2>
-          <div class="table-controls">
-              <button class="add-row-button">Adicionar Linha</button>
-          </div>
+          
           <div class="table-container">
             <table>
               <thead>
@@ -403,6 +417,9 @@
                 </tr>
               </tfoot>
             </table>
+          </div>
+<div class="table-controls">
+              <button class="add-row-button">Adicionar Linha</button>
           </div>
         </section>
 <!--
@@ -497,6 +514,11 @@
                             <td>Pessoais</td>
                             <td id="resumo-pessoais">0.00</td>
                         </tr>
+                        <tr>
+                           <td>Transporte</td>
+                          <td id="resumo-transporte">0.00</td>
+                        </tr>
+
                         <tr>
                             <td>Lazer</td>
                             <td id="resumo-lazer">0.00</td>
@@ -518,6 +540,9 @@
                     </tfoot>
                 </table>
             </div>
+<div class="table-controls">
+              <button class="add-row-button">Adicionar Linha</button>
+          </div>
         </section>
 
     </main>
