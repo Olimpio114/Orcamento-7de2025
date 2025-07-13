@@ -1,0 +1,385 @@
+/* orcamento_domestico_style.css */
+
+
+
+/* orcamento_domestico_style.css */
+
+/* Estilos Gerais e Reset Básico */
+body {
+    font-family: 'Arial', sans-serif; /* Define a fonte principal para todo o texto */
+    margin: 0; /* Remove margens padrão do corpo da página */
+    padding: 0; /* Remove preenchimento padrão do corpo da página */
+    box-sizing: border-box; /* Garante que padding e border sejam incluídos na largura/altura total dos elementos */
+    background-color: #f4f7f6; /* Define uma cor de fundo clara para a página */
+    color: #333; /* Define uma cor de texto escura padrão */
+}
+
+.container {
+    display: flex; /* Habilita o Flexbox para organizar os elementos filhos (sidebar, content) */
+    min-height: 100vh; /* Garante que o contêiner ocupe pelo menos 100% da altura da viewport */
+}
+
+
+
+/* Cabeçalho */
+header {
+    background-color: #14befc; /* Cor de fundo azul claro para o cabeçalho */
+    color: white; /* Cor do texto branco */
+    padding: 15px 20px; /* Preenchimento interno (superior/inferior e lateral) */
+    position: fixed; /* Fixa o cabeçalho no topo da viewport, não rola com o conteúdo */
+    width: 100%; /* Ocupa a largura total da tela */
+    top: 0; /* Alinha ao topo da tela */
+    left: 0; /* Alinha à esquerda da tela */
+    z-index: 1000; /* Garante que o cabeçalho fique acima de outros elementos na página */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Adiciona uma sombra sutil abaixo do cabeçalho */
+    
+	
+	
+	
+    
+    /* PROPRIEDADES PARA ALINHAR EM LINHA E DISTRIBUIR ESPAÇO */
+    display: flex; /* Habilita o Flexbox */
+    flex-direction: row; /* Alinha os itens em linha (horizontalmente) */
+    justify-content: space-between; /* Distribui os itens (título, mês, ano) uniformemente na linha */
+    align-items: center; /* Alinha os itens verticalmente no centro */
+    height: auto; /* Remove a altura fixa para o cabeçalho se adaptar ao conteúdo */
+    min-height: 80px; /* Garante uma altura mínima para o cabeçalho */
+}
+
+
+
+
+header h1 {
+    margin: 0; /* Remova margens padrão para melhor alinhamento */
+    font-size: 1.8em; /* Ajuste o tamanho da fonte se necessário para economizar espaço */
+    white-space: nowrap; /* Impede que o título quebre a linha */
+    flex-shrink: 0; /* Impede que o título encolha mais do que o necessário */
+}
+
+
+
+header .year {
+    font-size: 0.8em; /* Reduz o tamanho da fonte para o ano */
+    opacity: 0.8; /* Torna o ano ligeiramente transparente */
+}
+
+
+.month-selection,
+.year-selection {
+    display: flex; /* Habilita Flexbox para alinhar o rótulo e o select dentro */
+    align-items: center; /* Alinha verticalmente o rótulo e o select ao centro */
+    gap:10px; /* Adiciona um espaço de 10px entre o rótulo e o select */
+    margin-left: 20px; /* Adiciona uma margem à esquerda para separar as seleções */
+    flex-shrink: 0; /* Impede que esses contêineres encolham muito */
+}
+
+.month-selection label,
+.year-selection label {
+    margin-right: 0; /* Remove margem direita padrão de rótulos */
+    white-space: nowrap; /* Impede que o texto do rótulo quebre a linha */
+}
+
+.month-selection select,
+.year-selection select {
+    padding: 5px 10px; /* Preenchimento interno dos campos de seleção */
+    border-radius: 5px; /* Bordas arredondadas */
+    border: 1px solid #ccc; /* Borda cinza clara */
+    background-color: white; /* Fundo branco para os selects */
+	min-width: 80px; /* Garante uma largura mínima para exibir o ano completo */
+}
+
+
+
+/* Sidebar (Menu Lateral) */
+.sidebar {
+    width: 150px; /* Largura fixa da barra lateral */
+    background-color:#268fbe; /* Cor de fundo azul mais escura para a sidebar */
+    color: white; /* Cor do texto branco */
+    padding-top: 100px; /* Espaço na parte superior para evitar sobreposição com o cabeçalho fixo */
+    position: fixed; /* Fixa a sidebar na lateral da viewport */
+    height: 100vh; /* Ocupa 100% da altura da viewport */
+    overflow-y: auto; /* Adiciona uma barra de rolagem vertical se o conteúdo exceder a altura */
+    box-shadow: 2px 0 5px rgba(0,0,0,0.2); /* Sombra à direita da sidebar */
+    z-index: 999; /* Garante que a sidebar fique acima de outros elementos, mas abaixo do cabeçalho */
+
+
+}.sidebar nav ul {
+    list-style: none; /* Remove os marcadores de lista padrão */
+    padding: 0; /* Remove preenchimento padrão da lista */
+    margin: 0; /* Remove margens padrão da lista */
+}
+
+
+
+.sidebar nav ul {
+    list-style: none; /* Remove os marcadores de lista padrão */
+    padding: 0; /* Remove preenchimento padrão da lista */
+    margin: 0; /* Remove margens padrão da lista */
+}
+
+
+.sidebar nav ul li a {
+    display: block; /* Faz com que o link ocupe toda a largura do item da lista */
+    padding: 18px 25px; /* Preenchimento interno para os itens do menu */
+    text-decoration: none; /* Remove sublinhado dos links */
+    color: white; /* Cor do texto branco */
+    transition: background-color 0.3s ease; /* Transição suave na mudança de cor de fundo ao passar o mouse */
+	white-space: nowrap; /* Garante que o texto do link não quebre linha */
+    line-height: 1.5; /* Espaçamento entre linhas do texto */
+}
+
+/* Garante um espaçamento adequado para o texto dentro do link */
+    /* Você pode ajustar o font-size se estiver muito grande e causando o corte,
+       mas geralmente o padding e line-height resolvem: */
+    /* font-size: 1em; */
+ 
+}
+
+.sidebar nav ul li a:hover,
+.sidebar nav ul li a.active {
+    background-color: #1abc9c; /* Cor de fundo verde água ao passar o mouse ou quando ativo */
+    color: white; /* Cor do texto branco (mantém) */
+}
+
+
+/* Conteúdo Principal */
+.content {
+    margin-left: 220px; /* Adiciona uma margem à esquerda para dar espaço à sidebar fixa */
+    padding: 100px 20px 100px 20px; /* Preenchimento interno (top, right, bottom, left) para o conteúdo, ajustando para o cabeçalho e rodapé fixos */
+    flex-grow: 1; /* Permite que o conteúdo principal ocupe todo o espaço restante horizontalmente */
+    background-color: #f4f7f6; /* Cor de fundo para a área de conteúdo */
+}
+
+.budget-section {
+    background-color: white; /* Fundo branco para cada seção de orçamento */
+    padding: 20px; /* Preenchimento interno da seção */
+    margin-bottom: 20px; /* Margem abaixo de cada seção para separação */
+    border-radius: 8px; /* Bordas arredondadas para as seções */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Sombra suave para as seções */
+    display: none; /* Oculta todas as seções por padrão */
+}
+
+.budget-section.active {
+    display: block; /* Mostra a seção que tem a classe 'active' */
+}
+
+.budget-section h2 {
+    color: #2c3e50; /* Cor escura para os títulos das seções */
+    margin-top: 0; /* Remove margem superior padrão do título */
+    border-bottom: 2px solid #1abc9c; /* Borda inferior verde água para os títulos */
+    padding-bottom: 10px; /* Preenchimento abaixo da borda inferior do título */
+    margin-bottom: 20px; /* Margem abaixo do título */
+}
+
+/* Tabelas */
+/* Esta seção aparece duas vezes no seu CSS, com refinamentos na segunda ocorrência.
+   Vamos consolidar as regras e destacar as melhorias. */
+
+/* Regras aplicadas ao contêiner da tabela e à tabela em si */
+.table-container {
+    overflow-x: auto; /* Adiciona uma barra de rolagem horizontal se a tabela for muito larga */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05); /* Adiciona um sombreamento suave ao contêiner da tabela */
+    border-radius: 8px; /* Bordas arredondadas para o contêiner */
+    margin-bottom: 25px; /* Mais espaço abaixo de cada contêiner de tabela */
+}
+
+table {
+    width: 100%; /* A tabela ocupa 100% da largura de seu contêiner */
+    border-collapse: collapse; /* Colapsa as bordas das células em uma única borda */
+    margin-bottom: 0; /* Remove margem inferior aqui, pois o contêiner já tem */
+    border-radius: 8px; /* Bordas arredondadas para a tabela (visível com overflow: hidden) */
+    overflow: hidden; /* Garante que as bordas arredondadas sejam aplicadas corretamente */
+}
+
+table th, table td {
+    padding: 12px 15px; /* Preenchimento interno para cabeçalhos e células de dados */
+    border: 1px solid #e0e0e0; /* Borda mais suave para células */
+    text-align: left; /* Alinhamento do texto à esquerda */
+}
+
+table th {
+    background-color: #f8f8f8; /* Fundo mais claro para os cabeçalhos das colunas */
+    color: #444; /* Cor do texto para os cabeçalhos */
+    font-weight: 600; /* Deixa o texto do cabeçalho um pouco mais negrito */
+}
+
+table tbody tr:nth-child(even) {
+    background-color: #fdfdfd; /* Fundo ainda mais claro para linhas pares do corpo da tabela */
+}
+
+table tbody tr:hover {
+    background-color: #eef7f6; /* Efeito de hover (passar o mouse) mais suave */
+}
+
+table input[type="number"] {
+    width: 100%; /* Faz o input ocupar toda a largura disponível na célula */
+    padding: 10px; /* Aumenta o padding para os inputs */
+    border: 1px solid #d0d0d0; /* Borda mais discreta para inputs */
+    border-radius: 6px; /* Bordas arredondadas para inputs */
+    box-sizing: border-box; /* Garante que padding não adicione largura */
+    font-size: 1em; /* Garante tamanho de fonte legível */
+}
+
+table tfoot td {
+    font-weight: bold; /* Texto em negrito no rodapé da tabela */
+    background-color: #eaf2f8; /* Cor de fundo para o rodapé da tabela */
+    color: #2c3e50; /* Cor do texto no rodapé da tabela */
+}
+
+
+
+
+
+/* Div Estática para Totais (Footer) */
+.summary-footer {
+    background-color:#14befc; /* Cor de fundo azul claro, igual ao cabeçalho */
+    color: white; /* Cor do texto branco */
+    padding: 15px 20px; /* Preenchimento interno */
+    text-align: center; /* Centraliza o texto */
+    position: fixed; /* Fixa o rodapé na parte inferior da tela */
+    bottom: 0; /* Alinha à parte inferior */
+    left: 0; /* Alinha à esquerda */
+    width: 100%; /* Ocupa 100% da largura da tela */
+    box-shadow: 0 -2px 5px rgba(0,0,0,0.2); /* Sombra acima do rodapé */
+    z-index: 1000; /* Garante que fique acima de outros elementos */
+
+    /* PROPRIEDADES PARA ALINHAR EM UMA LINHA */
+    display: flex; /* Habilita o Flexbox */
+    justify-content: center; /* Centraliza os itens horizontalmente */
+    align-items: center; /* Alinha os itens verticalmente no centro */
+    gap: 20px; /* Adiciona um espaço de 20px entre os itens do rodapé */
+}
+
+.summary-footer h3 {
+    margin: 0; /* Remove margens padrão do título para melhor alinhamento */
+    color: #1abc9c; /* Cor verde água para o título do rodapé */
+}
+
+.summary-footer p {
+    margin: 0; /* Remove margens padrão dos parágrafos */
+    font-size: 1.1em; /* Aumenta o tamanho da fonte */
+    white-space: nowrap; /* Impede que o texto quebre linha */
+}
+
+.summary-footer span {
+    font-weight: bold; /* Negrito para os valores numéricos */
+    color: #e0f7fa; /* Uma cor mais clara para os valores */
+}
+
+
+
+
+/* Media Queries para Responsividade */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column; /* Em telas menores (até 768px), o contêiner empilha seus itens verticalmente */
+    }
+
+    /* Cabeçalho Responsivo */
+    header {
+        flex-direction: column; /* Os itens do cabeçalho (título, seletores) são empilhados verticalmente */
+        height: auto; /* Altura do cabeçalho se ajusta ao conteúdo */
+        padding: 15px 10px; /* Ajusta o preenchimento */
+        gap: 10px; /* Espaço entre os itens empilhados */
+        position: static; /* O cabeçalho não é mais fixo em telas pequenas, rola com a página */
+    }
+
+    header h1 {
+        font-size: 1.5em; /* Reduz o tamanho da fonte do título */
+    }
+
+    .month-selection,
+    .year-selection {
+        margin-left: 0; /* Remove a margem lateral */
+        justify-content: center; /* Centraliza os seletores horizontalmente */
+        width: 100%; /* Ocupa a largura total disponível */
+    }
+
+    /* Sidebar Responsiva */
+    .sidebar {
+        width: 100%; /* A sidebar ocupa toda a largura */
+        height: auto; /* Altura se ajusta ao conteúdo */
+        position: static; /* A sidebar não é mais fixa, rola com a página */
+        padding-top: 0; /* Remove o padding superior que compensava o header fixo */
+        box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Adiciona sombra abaixo da sidebar */
+        margin-bottom: 20px; /* Espaço entre sidebar e conteúdo */
+    }
+
+    .sidebar nav ul {
+        display: flex; /* Transforma os itens do menu em linha (horizontal) */
+        flex-wrap: wrap; /* Permite que os itens quebrem a linha se não houver espaço */
+        justify-content: center; /* Centraliza os itens do menu */
+        padding: 10px 0; /* Preenchimento */
+    }
+
+    .sidebar nav ul li {
+        flex: 1 1 auto; /* Permite que os itens cresçam/encolham e distribuam o espaço */
+        text-align: center; /* Centraliza o texto dos itens do menu */
+    }
+
+    .sidebar nav ul li a {
+        padding: 10px 15px; /* Ajusta o preenchimento dos links */
+        border-bottom: none; /* Remove bordas inferiores */
+        border-right: 1px solid rgba(255,255,255,0.1); /* Adiciona um separador vertical discreto */
+    }
+
+    .sidebar nav ul li:last-child a {
+        border-right: none; /* Remove a borda vertical do último item */
+    }
+
+    /* Conteúdo Principal Responsivo */
+    .content {
+        margin-left: 0; /* Remove a margem lateral (não há sidebar fixa) */
+        padding-top: 20px; /* Ajusta o preenchimento superior */
+    }
+
+    /* Footer de Resumo Responsivo */
+    .summary-footer {
+        position: static; /* O rodapé não é mais fixo */
+        margin-top: 20px; /* Adiciona margem superior */
+        flex-direction: column; /* Os itens do rodapé são empilhados verticalmente */
+        gap: 5px; /* Reduz o espaçamento entre itens */
+        padding: 10px; /* Ajusta o preenchimento */
+    }
+
+    /* Tabelas Responsivas */
+    table, thead, tbody, th, td, tr {
+        display: block; /* Faz com que todos os elementos da tabela se comportem como blocos, empilhando-os */
+    }
+
+    thead tr {
+        position: absolute; /* Oculta a linha de cabeçalho da tabela */
+        top: -9999px;
+        left: -9999px;
+    }
+
+    table tr {
+        border: 1px solid #eee; /* Borda para cada linha (agora um bloco) */
+        margin-bottom: 10px; /* Margem entre as linhas */
+        border-radius: 8px; /* Bordas arredondadas */
+        overflow: hidden; /* Garante que o conteúdo não vaze */
+    }
+
+    table td {
+        border: none; /* Remove as bordas padrão das células */
+        position: relative; /* Necessário para posicionar o pseudo-elemento */
+        padding-left: 50%; /* Espaço para o rótulo da coluna */
+        text-align: right; /* Alinha o conteúdo da célula à direita */
+    }
+
+    table td::before {
+        content: attr(data-label); /* Usa o valor do atributo 'data-label' como o rótulo */
+        position: absolute; /* Posiciona o rótulo dentro da célula */
+        left: 6px; /* Alinha à esquerda */
+        width: 45%; /* Largura do rótulo */
+        padding-right: 10px; /* Preenchimento à direita */
+        white-space: nowrap; /* Impede que o rótulo quebre linha */
+        text-align: left; /* Alinha o texto do rótulo à esquerda */
+        font-weight: bold; /* Negrito para o rótulo */
+        color: #555; /* Cor para o rótulo */
+    }
+
+    table input[type="number"] {
+        width: calc(100% - 10px); /* Ajusta a largura dos inputs para telas menores */
+    }
+}

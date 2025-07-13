@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Orçamento Doméstico Vertical</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="container">
+    <header>
+        <h1>Orçamento Doméstico <span class="year">2025</span></h1>
+        <div class="header-controls">
+            <div class="month-selection">
+                <label for="month-select">Mês:</label>
+                <select id="month-select"></select>
+            </div>
+            <div class="year-selection">
+                <label for="year-select">Ano:</label>
+                <select id="year-select"></select>
+            </div>
+            </div>
+    </header>
+
+    <aside class="sidebar">
+        <nav>
+            <ul>
+                <li><a href="#" class="menu-item active" data-target="receita-section">Receita</a></li>
+                <li><a href="#" class="menu-item" data-target="alimentacao-section">Alimentação</a></li>
+                <li><a href="#" class="menu-item" data-target="moradia-section">Moradia</a></li>
+                <li><a href="#" class="menu-item" data-target="educacao-section">Educação</a></li>
+                <li><a href="#" class="menu-item" data-target="saude-section">Saúde</a></li>
+                <li><a href="#" class="menu-item" data-target="pessoais-section">Pessoais</a></li>
+    <li><a href="#" class="menu-item" data-target="pessoais-section">Transporte</a></li>
+                <li><a href="#" class="menu-item" data-target="lazer-section">Lazer</a></li>
+                <li><a href="#" class="menu-item" data-target="servico-financeiro-section">Serviços Financeiros</a></li>
+                <li><a href="#" class="menu-item" data-target="resumo-section">Resumo</a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <main class="content">
+
+        <section id="receita-section" class="budget-section active">
+            <h2>Receita</h2>
+         
+            <div class="table-controls">
+              <button class="add-row-button">Adicionar Linha</button>
+            </div>
+            <div class="table-container">
+                <table id="receita-vertical">
+                    <thead>
+                        <tr>
+                            <th>Salário</th>
+                            <th>Férias</th>
+                            <th>13º Salário</th>
+                            <th>Aposentadoria</th>
+                            <th>Receita Extra</th>
+                            <th>Outras Receitas</th>
+                            <th>Ações</th>
+                            </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><input type="number" id="salario" class="despesa-input" value="0"></td>
+                            <td><input type="number" id="ferias" class="despesa-input" value="0"></td>
+                            <td><input type="number" id="decimo-terceiro" class="despesa-input" value="0"></td>
+                            <td><input type="number" id="aposentadoria" class="despesa-input" value="0"></td>
+                            <td><input type="number" id="receita-extra" class="despesa-input" value="0"></td>
+                            <td><input type="number" id="outras-receitas" class="despesa-input" value="0"></td>
+                            <td><button class="remove-horizontal-row-button">Remover</button></td>
+                            </tr>
+                    </tbody>
+
+  
+
+
+                    <tfoot>
+                        <tr>
+                            <td colspan="7" style="text-align: right;"> <strong>Total Receita: R$ <span id="total-receita">0.00</span></strong>
+                            </td>
+                        </tr>
+  
+                    </tfoot>
+                </table>
+            </div>
+        </section>
+
+        <section id="alimentacao-section" class="budget-section">
+            <h2>Alimentação</h2>
+	        <div class="table-controls">
+              <button class="add-row-button">Adicionar Linha</button>
+            </div>
+            <div class="table-container">
+                <table id="alimentacao-vertical">
+                    <thead>
+                        <tr>
+                            <th>Supermercado 1</th>
+                            <th>Supermercado 2</th>
+                            <th>Feira</th>
+                            <th>Peixe</th>
+                            <th>Padaria</th>
+                            <th>Refeição fora</th>
+                            <th>Outros</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><input type="number" id="supermercado1" class="despesa-input" value="0"></td>
+                            <td><input type="number" id="supermercado2" class="despesa-input" value="0"></td>
+                            <td><input type="number" id="feira" class="despesa-input" value="0"></td>
+                            <td><input type="number" id="peixe" class="despesa-input" value="0"></td>
+                            <td><input type="number" id="padaria" class="despesa-input" value="0"></td>
+                            <td><input type="number" id="refeicao-fora" class="despesa-input" value="0"></td>
+                            <td><input type="number" id="alimentacao-outros" class="despesa-input" value="0"></td>
+                            <td><button class="remove-horizontal-row-button">Remover</button></td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="8" style="text-align:right;"><strong>Total Geral da Alimentação: R$ <span id="total-alimentacao-section">0.00</span></strong></td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </section>
+
+        <section id="moradia-section" class="budget-section">
+            <h2>Moradia</h2>
+            <div class="table-controls">
+                <button class="add-row-button">Adicionar Linha</button>
+            </div>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Condomínio</th>
+                            <th>Fundo Res</th>
+                            <th>13º Moradia</th>
+                            <th>Gás</th>
+                            <th>Água</th>
+                            <th>Pintura</th>
+                            <th>Energia</th>
+                            <th>Tel. Fixo</th>
+                            <th>Celular</th>
+                            <th>Manutenção</th>
+                            <th>Outros 1</th>
+                            <th>Outros 2</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><input type="number" id="moradia-condominio" class="despesa-input" value="0"></td>
+                            <td><input type="number" id="moradia-fundo-res" class="despesa-input" value="0"></td>
+                            <td><input type="number" id="moradia-decimo-terceiro" class="despesa-input" value="0"></td>
+                            <td><input type="number" id="moradia-gas" class="despesa-input" value="0"></td>
+                            <td><input type="number" id="moradia-agua" class="despesa-input" value="0"></td>
+                            <td><input type="number" id="moradia-pintura" class="despesa-input" value="0"></td>
+                            <td><input type="number" id="moradia-energia-eletrica" class="despesa-input" value="0"></td>
+                            <td><input type="number" id="moradia-telefone-fixo" class="despesa-input" value="0"></td>
+                            <td><input type="number" id="moradia-celular" class="despesa-input" value="0"></td>
+                            <td><input type="number" id="moradia-manutencao-casa" class="despesa-input" value="0"></td>
+                            <td><input type="number" id="moradia-outros1" class="despesa-input" value="0"></td>
+                            <td><input type="number" id="moradia-outros2" class="despesa-input" value="0"></td>
+                            <td><button class="remove-horizontal-row-button">Remover</button></td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="13" style="text-align:right;"><strong>Total Geral da Moradia: R$ <span id="total-moradia-section">0.00</span></strong></td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </section>
+
+        <section id="educacao-section" class="budget-section">
+          <h2>Educação</h2>
+          <div class="table-controls">
+              <button class="add-row-button">Adicionar Linha</button>
+          </div>
+          <div class="table-container">
+            <table>
+              <thead>
+                <tr>
+                  <th>Matrícula</th>
+                  <th>Material Escolar</th>
+                  <th>Outros Cursos</th>
+                  <th>Transporte Escolar</th>
+                    <th>Ações</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><input type="number" id="educacao-matricula-mensalidade" class="despesa-input" value="0"></td>
+                  <td><input type="number" id="educacao-material-escolar" class="despesa-input" value="0"></td>
+                  <td><input type="number" id="educacao-outros-cursos" class="despesa-input" value="0"></td>
+                  <td><input type="number" id="educacao-transporte-escolar" class="despesa-input" value="0"></td>
+                    <td><button class="remove-horizontal-row-button">Remover</button></td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <td colspan="5" style="text-align:right;"><strong>Total Geral da Educação: R$ <span id="total-educacao-section">0.00</span></strong></td>
+                </tr>
+              </tfoot>
+            </table>
+          </div>
+        </section>
+
+        <section id="saude-section" class="budget-section">
+          <h2>Saúde</h2>
+          <div class="table-controls">
+              <button class="add-row-button">Adicionar Linha</button>
+          </div>
+          <div class="table-container">
+            <table>
+              <thead>
+                <tr>
+                  <th>Plano</th>
+                  <th>Medicamentos</th>
+                  <th>Dentista</th>
+                  <th>Terapia</th>
+                  <th>Exames</th>
+                  <th>Estética</th>
+                    <th>Ações</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><input type="number" id="saude-plano-saude" class="despesa-input" value="0"></td>
+                  <td><input type="number" id="saude-medicamentos" class="despesa-input" value="0"></td>
+                  <td><input type="number" id="saude-dentista" class="despesa-input" value="0"></td>
+                  <td><input type="number" id="saude-terapia" class="despesa-input" value="0"></td>
+                  <td><input type="number" id="saude-medicos-fora-plano" class="despesa-input" value="0"></td>
+                  <td><input type="number" id="saude-academia-estetico" class="despesa-input" value="0"></td>
+                    <td><button class="remove-horizontal-row-button">Remover</button></td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <td colspan="7" style="text-align:right;"><strong>Total Geral da Saúde: R$ <span id="total-saude-section">0.00</span></strong></td>
+                </tr>
+              </tfoot>
+            </table>
+          </div>
+        </section>
+
+        <section id="pessoais-section" class="budget-section">
+          <h2>Pessoais</h2>
+          <div class="table-controls">
+              <button class="add-row-button">Adicionar Linha</button>
+          </div>
+          <div class="table-container">
+            <table>
+              <thead>
+                <tr>
+                  <th>Vestuário</th>
+                  <th>Cabeleireiro</th>
+                  <th>Presentes</th>
+                  <th>Outros</th>
+                    <th>Ações</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><input type="number" id="pessoais-vestuario" class="despesa-input" value="0"></td>
+                  <td><input type="number" id="pessoais-cabeleireiro" class="despesa-input" value="0"></td>
+                  <td><input type="number" id="pessoais-presentes" class="despesa-input" value="0"></td>
+                  <td><input type="number" id="pessoais-outros" class="despesa-input" value="0"></td>
+                    <td><button class="remove-horizontal-row-button">Remover</button></td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <td colspan="5" style="text-align:right;"><strong>Total Geral de Despesas Pessoais: R$ <span id="total-pessoais-section">0.00</span></strong></td>
+                </tr>
+              </tfoot>
+            </table>
+          </div>
+        </section>
+
+<section id="transporte-section" class="budget-section">
+    <h2>Transporte</h2>
+    <div class="table-controls">
+        <button class="add-row-button">Adicionar Linha</button>
+    </div>
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Ônibus / Metrô</th>
+                    <th>Táxi</th>
+                    <th>Combustível</th>
+                    <th>Estacionamento</th>
+                    <th>Seguro Auto</th>
+                    <th>Manutenção / Lavagem / Troca de óleo</th>
+                    <th>IPVA Moto</th>
+                    <th>Pedágio</th>
+                    <th>IPVA Carro</th>
+                    <th>Ações</th> </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><input type="number" id="onibus-metro" class="despesa-input" value="0"></td>
+                    <td><input type="number" id="taxi" class="despesa-input" value="0"></td>
+                    <td><input type="number" id="combustivel" class="despesa-input" value="0"></td>
+                    <td><input type="number" id="estacionamento" class="despesa-input" value="0"></td>
+                    <td><input type="number" id="seguro-auto" class="despesa-input" value="0"></td>
+                    <td><input type="number" id="manutencao-veiculo" class="despesa-input" value="0"></td>
+                    <td><input type="number" id="ipva-moto" class="despesa-input" value="0"></td>
+                    <td><input type="number" id="pedagio" class="despesa-input" value="0"></td>
+                    <td><input type="number" id="ipva-carro" class="despesa-input" value="0"></td>
+                    <td><button class="remove-horizontal-row-button">Remover</button></td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="10" style="text-align:right;">
+                        <strong>Total Geral de Transporte: R$ <span id="total-transporte-section">0.00</span></strong>
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+</section>
+
+
+
+        <section id="lazer-section" class="budget-section">
+          <h2>Lazer</h2>
+          <div class="table-controls">
+              <button class="add-row-button">Adicionar Linha</button>
+          </div>
+          <div class="table-container">
+            <table>
+              <thead>
+                <tr>
+                  <th>Cinema</th>
+                  <th>Livros</th>
+                  <th>Clube</th>
+                  <th>Viagens</th>
+                  <th>Restaurantes</th>
+                    <th>Ações</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><input type="number" id="lazer-cinema-teatro" class="despesa-input" value="0"></td>
+                  <td><input type="number" id="lazer-livros-revistas" class="despesa-input" value="0"></td>
+                  <td><input type="number" id="lazer-clube-parques" class="despesa-input" value="0"></td>
+                  <td><input type="number" id="lazer-viagens" class="despesa-input" value="0"></td>
+                  <td><input type="number" id="lazer-restaurantes-bares" class="despesa-input" value="0"></td>
+                    <td><button class="remove-horizontal-row-button">Remover</button></td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <td colspan="6" style="text-align:right;"><strong>Total Geral de Lazer: R$ <span id="total-lazer-section">0.00</span></strong></td>
+                </tr>
+              </tfoot>
+            </table>
+          </div>
+        </section>
+
+        <section id="servico-financeiro-section" class="budget-section">
+          <h2>Serviços Financeiros</h2>
+          <div class="table-controls">
+              <button class="add-row-button">Adicionar Linha</button>
+          </div>
+          <div class="table-container">
+            <table>
+              <thead>
+                <tr>
+                  <th>Empréstimos</th>
+                  <th>Seguros</th>
+                  <th>Investimentos</th>
+                  <th>Cheque Especial</th>
+                  <th>Tarifas</th>
+                  <th>Financiamento</th>
+                  <th>IR a Pagar</th>
+                    <th>Ações</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><input type="number" id="finan-emprestimos" class="despesa-input" value="0"></td>
+                  <td><input type="number" id="finan-seguros" class="despesa-input" value="0"></td>
+                  <td><input type="number" id="finan-investimentos" class="despesa-input" value="0"></td>
+                  <td><input type="number" id="finan-juros-cheque-especial" class="despesa-input" value="0"></td>
+                  <td><input type="number" id="finan-tarifas-bancarias" class="despesa-input" value="0"></td>
+                  <td><input type="number" id="finan-financiamento-veiculo" class="despesa-input" value="0"></td>
+                  <td><input type="number" id="finan-imposto-renda-pagar" class="despesa-input" value="0"></td>
+                    <td><button class="remove-horizontal-row-button">Remover</button></td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <td colspan="8" style="text-align:right;"><strong>Total Geral de Serviços Financeiros: R$ <span id="total-servico-financeiro-section">0.00</span></strong></td>
+                </tr>
+              </tfoot>
+            </table>
+          </div>
+        </section>
+<!--
+   <section id="resumo-section" class="budget-section">
+            <h2>Resumo de Gastos por Categoria</h2>
+   <div class="table-controls">
+              <button class="add-row-button">Adicionar Linha</button>
+          </div>
+          <div class="table-container">
+            <table>
+              <thead>
+                <tr>
+
+                  <th>Receita</th>
+                  <th>Alimentação</th>
+                  <th>Moradia</th>
+                  <th>Educação</th>
+                  <th>Saúde </th>
+                  <th>Pessoais</th>
+                  <th>Lazer</th>
+                  <th>Serviços Financeiros</th>
+                 
+                 
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><input type="number" id="finan-receita" class="despesa-input" value="0"></td>
+  <td id="resumo-receita">0.00</td>
+                  <td><input type="number" id="finan-alimentacao" class="despesa-input" value="0"></td>
+ <td id="resumo-alimentacao">0.00</td>
+                  <td><input type="number" id="finan-moradia" class="despesa-input" value="0"></td>
+                  <td><input type="number" id="finan-educacao" class="despesa-input" value="0"></td>
+                  <td><input type="number" id="finan-saude" class="despesa-input" value="0"></td>
+                  <td><input type="number" id="finan-pessoais" class="despesa-input" value="0"></td>
+                  <td><input type="number" id="finan-lazer" class="despesa-input" value="0"></td>
+                  <td><input type="number" id="finan-iServiço financeiro" class="despesa-input" value="0"></td>
+                 
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <td colspan="8" style="text-align:right;"><strong>Resumo de Gastos por Categoria: R$ <span id="total-servico-financeiro-section">0.00</span></strong></td>
+                </tr>
+              </tfoot>
+            </table>
+          </div>
+        </section>
+
+
+-->
+                                 
+
+
+
+
+
+
+
+        <section id="resumo-section" class="budget-section">
+            <h2>Resumo de Gastos por Categoria</h2>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Categoria</th>
+                            <th>Total Gasto (R$)</th>
+                        </tr>
+                    </thead>
+                    <tbody id="resumo-table-body">
+                        <tr>
+                            <td>Receita</td>
+                            <td id="resumo-receita">0.00</td>
+                        </tr>
+                        <tr>
+                            <td>Alimentação</td>
+                            <td id="resumo-alimentacao">0.00</td>
+                        </tr>
+                        <tr>
+                            <td>Moradia</td>
+                            <td id="resumo-moradia">0.00</td>
+                        </tr>
+                        <tr>
+                            <td>Educação</td>
+                            <td id="resumo-educacao">0.00</td>
+                        </tr>
+                        <tr>
+                            <td>Saúde</td>
+                            <td id="resumo-saude">0.00</td>
+                        </tr>
+                        <tr>
+                            <td>Pessoais</td>
+                            <td id="resumo-pessoais">0.00</td>
+                        </tr>
+                        <tr>
+                            <td>Lazer</td>
+                            <td id="resumo-lazer">0.00</td>
+                        </tr>
+                        <tr>
+                            <td>Serviços Financeiros</td>
+                            <td id="resumo-servico-financeiro">0.00</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td><strong>Total Despesas</strong></td>
+                            <td id="resumo-total-despesas-geral"><strong>0.00</strong></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Resultado Final</strong></td>
+                            <td id="resumo-resultado-final"><strong>0.00</strong></td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="summary-footer">
+        <p>Receita Total: <span id="summary-total-receita">R$ 0.00</span></p>
+        <p>Despesas Totais: <span id="summary-total-despesas">R$ 0.00</span></p>
+        <p>Resultado: <span id="summary-resultado">R$ 0.00</span></p>
+    </footer>
+
+  </div>
+  <script src="https://unpkg.com/dexie/dist/dexie.js"></script>
+  <script src="db-orcamento.js"></script>
+  <script src="orcamento_domestico_script.js"></script>
+
+</body>
+</html>
